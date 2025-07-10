@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificación de Identidad Segura - Cambios Chasan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f4f7f6;
+        }
+        .background-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-image: url('https://images.unsplash.com/photo-1600985233544-3c65d63aaa33?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            filter: blur(4px) brightness(0.7);
+        }
+        .content-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .verification-card {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .logo {
+            max-width: 150px;
+            margin-bottom: 20px;
+        }
+        .company-name {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1a3b5d;
+            margin-bottom: 30px;
+        }
+        .title {
+            font-size: 28px;
+            font-weight: 600;
+            color: #1a3b5d;
+            margin-bottom: 15px;
+        }
+        .description {
+            font-size: 18px;
+            color: #34495e;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .button {
+            display: inline-block;
+            padding: 18px 40px;
+            font-size: 18px;
+            font-weight: 700;
+            color: white;
+            background: linear-gradient(45deg, #2980b9, #3498db);
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.4);
+        }
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.5);
+        }
+        .button.disabled {
+            background: #bdc3c7;
+            cursor: not-allowed;
+            box-shadow: none;
+            transform: none;
+        }
+        .warning-box {
+            margin-top: 30px; 
+            padding: 20px; 
+            text-align: left; 
+            background-color: #f8f9fa; 
+            border-left: 5px solid #00a79d; 
+            border-radius: 8px;
+        }
+        .warning-box h3 {
+            margin-top: 0; 
+            color: #1a3b5d; 
+            font-size: 18px;
+        }
+        .warning-box p, .warning-box ul {
+            color: #34495e; 
+            font-size: 16px; 
+            line-height: 1.6;
+        }
+        .warning-box ul {
+            padding-left: 20px;
+        }
+        .warning-box ul li {
+            margin-bottom: 10px;
+        }
+        @media (max-width: 600px) {
