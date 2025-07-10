@@ -117,3 +117,75 @@
             margin-bottom: 10px;
         }
         @media (max-width: 600px) {
+            .verification-card {
+                padding: 30px;
+            }
+            .company-name {
+                font-size: 20px;
+            }
+            .title {
+                font-size: 24px;
+            }
+            .description {
+                font-size: 16px;
+            }
+            .warning-box h3 {
+                font-size: 16px;
+            }
+            .warning-box p, .warning-box ul {
+                font-size: 14px;
+            }
+            .button {
+                font-size: 16px;
+                padding: 15px 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background-container"></div>
+    <div class="content-wrapper">
+        <div class="verification-card">
+            
+            <img src="logo-chasan.png" alt="Logo de Cambios Chasan" class="logo">
+            
+            <h2 class="company-name">
+                Cambios Chasan
+            </h2>
+            
+            <h1 class="title">Verificación de Identidad</h1>
+            <p class="description">
+                Estás a punto de ser redirigido a nuestro portal seguro. Este proceso es necesario para proteger tu cuenta y cumplir con las normativas vigentes.
+            </p>
+            
+            <div class="warning-box">
+                <h3 style="margin-top: 0; color: #1a3b5d; font-size: 18px;">Un Momento, por tu Seguridad...</h3>
+                <p style="color: #34495e; font-size: 16px; line-height: 1.6;">
+                    Antes de continuar, queremos recordarte que nuestro servicio está diseñado para enviar <strong>remesas a personas que conoces y en quienes confías.</strong>
+                </p>
+                <ul style="padding-left: 20px; color: #34495e; font-size: 16px;">
+                    <li style="margin-bottom: 10px;"><strong>Verifica a tu destinatario:</strong> Asegúrate de que no estás enviando dinero por la compra de un producto o bajo la presión de un desconocido.</li>
+                    <li><strong>Nuestro rol es claro:</strong> En Cambios Chasan nos dedicamos exclusivamente al intercambio de divisas. Nunca te contactaremos para venderte algo ni para solicitarte un pago.</li>
+                </ul>
+            </div>
+            
+            <a href="#" id="boton-validacion" class="button">Continuar al Portal Seguro</a>
+        </div>
+    </div>
+
+    <script>
+        window.onload = function() {
+            const boton = document.getElementById('boton-validacion');
+            const params = new URLSearchParams(window.location.search);
+            const urlDestino = params.get('destino');
+            
+            if (urlDestino) {
+                boton.href = urlDestino;
+            } else {
+                boton.textContent = 'Link no válido';
+                boton.classList.add('disabled');
+            }
+        };
+    </script>
+</body>
+</html>
